@@ -1,0 +1,57 @@
+pondremos cinco columnas de objetos de una palabra (por ahora , ya que ya veremos como hacemos para
+ver los posibles problemas de espacios etc)
+cuando lo encuentre , guardara el objeto en un array ,
+para hacer que esto sea random de alguna manera , haremos una semilla
+
+
+ el funcionamiento es el siguiente :
+
+ int main () {
+   int i, n;
+   time_t t;
+
+   n = 5;
+   
+   /* Intializes random number generator */
+   srand((unsigned) time(&t));
+
+   /* Print 5 random numbers from 0 to 50 */
+   for( i = 0 ; i < n ; i++ ) {
+      printf("%d\n", rand() % 50);
+   }
+
+   return(0);
+}
+
+en vez de imprimir como en el ejemplo anterior lo que hacemos es un bucle
+con lectura de archivos ,
+tal que :
+enum (objeto1=0,objeto2,objeto3,objeto4,objeto5);
+abrir etc
+srand((unsigned) objeto(%d))
+for(i=0;fseek(file,"%s%s%s%s%s",objeto1,objeto2,objeto3,objeto4,objeto5)==5);i++){
+
+}
+
+
+
+
+OTRA OPCION SERIA :
+
+utilizar la funcion fgets
+fgets
+Esta función está diseñada para leer cadenas de caracteres. Leerá hasta n-1 caracteres
+o hasta que lea un cambio de línea '\n' o un final de archivo EOF. En este último caso,
+ el carácter de cambio de línea '\n' también es leído.
+
+El prototipo correspondiente de fgets es:
+
+	char *fgets(char *buffer, int tamaño, FILE *archivo);
+
+El primer parámetro buffer lo hemos llamado así porque es un puntero a un espacio de memoria
+ del tipo char (podríamos usar un arreglo de char). El segundo parámetro es tamaño que es el limite
+  en cantidad de caracteres a leer para la funcion fgets. Y por ultimo el puntero del archivo por supuesto que
+   es la forma en que fgets sabra a que archivo debe leer.
+
+
+De esta manera , pondremos un lista de objetos separando cada objeto por un salto de linea , y
